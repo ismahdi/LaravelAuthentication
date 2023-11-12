@@ -88,7 +88,7 @@
                                     <!-- Email input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address</label>
-                                        <input type="email" id="email" class="form-control @error('full_name') is-invalid @enderror" name="email"
+                                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email"
                                                value="{{old('email')}}"/>
 
                                             @error('email')
@@ -102,19 +102,18 @@
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" id="password" class="form-control @error('full_name') is-invalid @enderror" name="password"/>
-
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-
+                                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password"/>
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password_confirmation">Confirm Password</label>
-                                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"/>
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password_confirmation" name="password_confirmation"/>
+
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                     </div>
 
                                     <!-- Submit button -->

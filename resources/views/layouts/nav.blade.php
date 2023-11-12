@@ -12,7 +12,7 @@
                 hsl(218, 41%, 19%) 80%,
                 transparent 100%)">
     <div class="container">
-        <a class="navbar-brand" href="{{ URL('/') }}"></a>
+{{--        <a class="navbar-brand" href="{{ URL('/dashboard') }}" style="color: #cbd5e0">Dashboard</a>--}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

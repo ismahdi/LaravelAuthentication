@@ -86,8 +86,9 @@ class LoginRegisterController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The entered email is not registered.'
-        ])->onlyInput('email');
+            'email' => 'The entered email is incorrect!',
+            'password' => 'The entered password is incorrect!'
+        ])->onlyInput(['email', 'password']);
     }
 
     /**
