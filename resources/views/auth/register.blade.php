@@ -79,43 +79,48 @@
                                                class="form-control @error('full_name') is-invalid @enderror"
                                                name="full_name" value="{{old('full_name')}}"/>
 
-                                            @error('full_name')
-                                                <span class="invalid-feedback" role="alert">
+                                        @error('full_name')
+                                        <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror
+                                        @enderror
 
                                     </div>
 
                                     <!-- Email input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address</label>
-                                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                                        <input type="email" id="email"
+                                               class="form-control @error('email') is-invalid @enderror" name="email"
                                                value="{{old('email')}}"/>
 
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror
+                                        @enderror
 
                                     </div>
 
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password"/>
+                                        <input type="password" id="password"
+                                               class="form-control @error('password') is-invalid @enderror"
+                                               name="password"/>
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password_confirmation">Confirm Password</label>
-                                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password_confirmation" name="password_confirmation"/>
+                                        <input type="password"
+                                               class="form-control @error('password') is-invalid @enderror"
+                                               id="password_confirmation" name="password_confirmation"/>
 
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                            @enderror
+                                        @enderror
                                     </div>
 
                                     <!-- Submit button -->
@@ -130,7 +135,9 @@
 
                                     <!-- login area -->
                                     <div class="text-center">
-                                        <p>already have an account? <a href="{{route('login')}}" style="color: blue; text-decoration: none">Login now</a>
+                                        <p>already have an account? <a href="{{route('login')}}"
+                                                                       style="color: blue; text-decoration: none">Login
+                                                now</a>
                                         </p>
                                         <button type="button" class="btn btn-link btn-floating mx-1">
                                         </button>

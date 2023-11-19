@@ -47,7 +47,7 @@
 @stop
 
 @section('content')
-    <section class="background-radial-gradient overflow-hidden">
+    <section class="overflow-hidden">
         <div>
             <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-3">
                 <div class="row gx-lg-5 align-items-center mb-5" style="margin-top: 57px;">
@@ -67,7 +67,6 @@
                     <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                         <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
                         <div class="card bg-glass">
                             <div class="card-body mt-5 px-4 py-2 px-md-5">
                                 <form action="{{route('authenticate')}}" method="post">
