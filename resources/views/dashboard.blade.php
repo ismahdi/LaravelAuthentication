@@ -1,5 +1,7 @@
 @extends('layouts.total')
 
+@section('title') Dashboard @stop
+
 @section('content')
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">

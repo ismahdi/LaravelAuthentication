@@ -1,5 +1,7 @@
 @extends('layouts.total')
 
+@section('title') Register @stop
+
 @section('style')
     <style>
         .background-radial-gradient {

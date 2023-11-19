@@ -1,5 +1,7 @@
 @extends('layouts.total')
 
+@section('title') Login @stop
+
 @section('style')
     <style>
         .background-radial-gradient {
