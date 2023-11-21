@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\LoginRegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +29,8 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
 });
 
-    /*! Forgot Password Routes */
-Route::controller(ForgotPasswordController::class)->group(function (){
+    /*! Forget Password Routes */
+Route::controller(ForgetPasswordController::class)->group(function (){
     Route::get('/forget-password', 'showForgetPasswordForm')->name('forget.password.show');
     Route::post('/forget-password', 'submitForgetPassword')->name('forget.password.submit');
     Route::get('/reset-password/{token}', 'showResetPasswordForm')->name('reset.password.show');

@@ -67,7 +67,7 @@
                         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                         <div class="card bg-glass">
                             <div class="card-body mt-5 px-4 py-2 px-md-5">
-                                <form action="{{route('authenticate')}}" method="post">
+                                <form action="{{route('forget.password.submit')}}" method="post">
                                     @csrf
 
                                     @if (session('success'))
@@ -75,44 +75,20 @@
                                             {{ session('success') }}
                                         </div>
                                     @endif
-
                                     <!-- Email input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address</label>
                                         <input type="email" id="email"
                                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                               required
                                                value="{{old('email')}}"/>
 
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror
+                                        @enderror
 
-                                    </div>
-
-                                    <!-- Password input -->
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="password">Password</label>
-                                        <input type="password" id="password"
-                                               class="form-control @error('email') is-invalid @enderror"
-                                               name="password"/>
-
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
-
-                                    <!-- Checkbox -->
-                                    <div class="form-check d-flex justify-content-center mb-4">
-                                        <input class="form-check-input me-2" type="checkbox" value=""
-                                               id="form2Example33" checked/>
-                                        <label class="form-check-label" for="form2Example33">
-                                            Remember me
-                                        </label>
                                     </div>
 
                                     <!-- Submit button -->
@@ -120,18 +96,9 @@
                                         <div class="flex-container " style="display: flex; justify-content: center;">
                                             <button type="submit"
                                                     class="btn btn-primary btn-block mb-4 text-center w-50">
-                                                Log in
+                                                Send Link
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <!-- signup area -->
-                                    <div class="text-center">
-                                        <p>
-                                            <a href="{{route('forget.password.show')}}" style="color: blue; text-decoration: none">Forget Your Password?</a>
-                                        </p>
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
-                                        </button>
                                     </div>
                                 </form>
                             </div>
