@@ -128,7 +128,7 @@
                                     <!-- signup area -->
                                     <div class="text-center">
                                         <p>
-                                            <a href="{{route('forget.password.show')}}" style="color: blue; text-decoration: none">Forget Your Password?</a>
+                                            <a href="{{route('ForgetPasswordShow')}}" style="color: blue; text-decoration: none">Forget Your Password?</a>
                                         </p>
                                         <button type="button" class="btn btn-link btn-floating mx-1">
                                         </button>

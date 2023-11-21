@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\LoginRegisterController;
+use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-    /*! Login & Register Routes */
-Route::controller(LoginRegisterController::class)->group(function() {
+/*! Login & Register Routes */
+Route::controller(LoginRegisterController::class)->group(function () {
     Route::get('/register', 'register')->name('register');
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
@@ -29,10 +30,29 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
 });
 
-    /*! Forget Password Routes */
-Route::controller(ForgetPasswordController::class)->group(function (){
-    Route::get('/forget-password', 'showForgetPasswordForm')->name('forget.password.show');
-    Route::post('/forget-password', 'submitForgetPassword')->name('forget.password.submit');
-    Route::get('/reset-password/{token}', 'showResetPasswordForm')->name('reset.password.show');
-    Route::post('reset-password', 'submitResetPasswordForm')->name('reset.password.submit');
+///*! Forget Password Routes */
+//Route::get('/forget-password', [ForgetPasswordController::class, 'showForgetPasswordForm'])
+//    ->name('forget.password.show');
+//Route::post('/forget-password',[ForgetPasswordController::class, 'submitForgetPassword'])
+//    ->name('forget.password.submit');
+
+///*! Reset Password Routes */
+//Route::get('/reset-password/{token}',[ResetPasswordController::class, 'showResetPasswordForm'])
+//    ->name('reset.password.show');
+//Route::post('reset-password', [ResetPasswordController::class, 'submitResetPasswordForm'])
+//    ->name('reset.password.submit');
+
+/*! Forget and Reset Password Routes */
+Route::group(['prefix' => 'password'], function () {
+    Route::get('/reset', [ForgetPasswordController::class, 'showForgetPasswordForm'])
+        ->name('ForgetPasswordShow');
+
+    Route::post('/email', [ForgetPasswordController::class, 'submitForgetPassword'])
+        ->name('ForgetPasswordSubmit');
+
+    Route::get('/reset/{token}',[ResetPasswordController::class, 'showResetPasswordForm'])
+        ->name('ResetPasswordShow');
+
+    Route::post('/reset', [ResetPasswordController::class, 'submitResetPasswordForm'])
+        ->name('ResetPasswordSubmit');
 });

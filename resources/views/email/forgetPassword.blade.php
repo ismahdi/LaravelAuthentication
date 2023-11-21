@@ -15,5 +15,5 @@
 <div>
     <h2 style="padding: 100px;">Forget Password Email</h2>
     <span class="reset"> You can reset password from bellow link:
-        <a href="{{ route('reset.password.show', $token) }}">Reset Password</a> </span>
+        <a href="{{ route('ResetPasswordShow', $token) }}">Reset Password</a> </span>
 </div>

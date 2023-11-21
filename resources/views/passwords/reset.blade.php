@@ -67,16 +67,16 @@
                         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                         <div class="card bg-glass">
                             <div class="card-body mt-5 px-4 py-2 px-md-5">
-                                <form action="{{route('reset.password.submit')}}" method="post">
+                                <form action="{{route('ResetPasswordSubmit')}}" method="post">
                                     @csrf
-                                    <input type="hidden" name="token" value="{{ $token }}">
-                                        <div>
-                                            @error('error')
-                                            <span class="alert alert-danger">
+                                    <div>
+                                        @error('error')
+                                        <span class="alert alert-danger">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror
-                                        </div>
+                                        @enderror
+                                    </div>
+                                    <input type="hidden" name="token" value="{{ $token }}">
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>

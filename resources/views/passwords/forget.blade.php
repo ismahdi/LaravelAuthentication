@@ -67,7 +67,7 @@
                         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                         <div class="card bg-glass">
                             <div class="card-body mt-5 px-4 py-2 px-md-5">
-                                <form action="{{route('forget.password.submit')}}" method="post">
+                                <form action="{{route('ForgetPasswordSubmit')}}" method="post">
                                     @csrf
 
                                     @if (session('success'))
