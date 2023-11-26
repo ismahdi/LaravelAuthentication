@@ -106,6 +106,11 @@
                                         <input type="password" id="password"
                                                class="form-control @error('password') is-invalid @enderror"
                                                name="password"/>
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="form-outline mb-4">

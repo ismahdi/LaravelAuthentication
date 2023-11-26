@@ -3,6 +3,7 @@
 @section('style')
     <style>
         .background-radial-gradient {
+            height: 100vh;
             background-color: hsl(218, 41%, 15%);
             background-image: radial-gradient(650px circle at 0% 0%,
             hsl(218, 41%, 35%) 15%,
@@ -67,15 +68,15 @@
                         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                         <div class="card bg-glass">
                             <div class="card-body mt-5 px-4 py-2 px-md-5">
+                                <div>
+                                    @error('error')
+                                        <p class="alert alert-danger mb-4">
+                                            <strong>{{ $message }}</strong>
+                                        </p>
+                                    @enderror
+                                </div>
                                 <form action="{{route('ResetPasswordSubmit')}}" method="post">
                                     @csrf
-                                    <div>
-                                        @error('error')
-                                        <span class="alert alert-danger">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                        @enderror
-                                    </div>
                                     <input type="hidden" name="token" value="{{ $token }}">
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">

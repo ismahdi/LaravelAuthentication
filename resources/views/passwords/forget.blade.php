@@ -3,6 +3,7 @@
 @section('style')
     <style>
         .background-radial-gradient {
+            height: 100vh;
             background-color: hsl(218, 41%, 15%);
             background-image: radial-gradient(650px circle at 0% 0%,
             hsl(218, 41%, 35%) 15%,
@@ -67,14 +68,13 @@
                         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                         <div class="card bg-glass">
                             <div class="card-body mt-5 px-4 py-2 px-md-5">
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                                 <form action="{{route('ForgetPasswordSubmit')}}" method="post">
                                     @csrf
-
-                                    @if (session('success'))
-                                        <div class="alert alert-success">
-                                            {{ session('success') }}
-                                        </div>
-                                    @endif
                                     <!-- Email input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address</label>
