@@ -30,18 +30,6 @@ Route::controller(LoginRegisterController::class)->group(function () {
     Route::post('/logout', 'logout')->name('logout');
 });
 
-///*! Forget Password Routes */
-//Route::get('/forget-password', [ForgetPasswordController::class, 'showForgetPasswordForm'])
-//    ->name('forget.password.show');
-//Route::post('/forget-password',[ForgetPasswordController::class, 'submitForgetPassword'])
-//    ->name('forget.password.submit');
-
-///*! Reset Password Routes */
-//Route::get('/reset-password/{token}',[ResetPasswordController::class, 'showResetPasswordForm'])
-//    ->name('reset.password.show');
-//Route::post('reset-password', [ResetPasswordController::class, 'submitResetPasswordForm'])
-//    ->name('reset.password.submit');
-
 /*! Forget and Reset Password Routes */
 Route::group(['prefix' => 'password'], function () {
     Route::get('/reset', [ForgetPasswordController::class, 'showForgetPasswordForm'])
