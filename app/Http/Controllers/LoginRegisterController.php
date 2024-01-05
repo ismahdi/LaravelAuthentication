@@ -12,12 +12,12 @@ class LoginRegisterController extends Controller
     /**
      * Integrate a new LoginRegisterController instance.
     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except([
-            'logout', 'dashboard'
-        ]);
-    }
+     public function __construct()
+     {
+         $this->middleware('guest')->except([
+             'logout', 'dashboard'
+         ]);
+     }
 
     /**
      * Display the registration form.

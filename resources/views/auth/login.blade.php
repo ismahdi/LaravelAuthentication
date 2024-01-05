@@ -83,11 +83,11 @@
                                                class="form-control @error('email') is-invalid @enderror" name="email"
                                                value="{{old('email')}}"/>
 
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror
+                                        @enderror
 
                                     </div>
 
@@ -95,22 +95,22 @@
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
                                         <input type="password" id="password"
-                                               class="form-control @error('email') is-invalid @enderror"
+                                               class="form-control @error('password') is-invalid @enderror"
                                                name="password"/>
 
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                            @enderror
+                                        @enderror
 
                                     </div>
 
                                     <!-- Checkbox -->
                                     <div class="form-check d-flex justify-content-center mb-4">
                                         <input class="form-check-input me-2" type="checkbox" value=""
-                                               id="form2Example33" checked/>
-                                        <label class="form-check-label" for="form2Example33">
+                                               id="remember" checked/>
+                                        <label class="form-check-label" for="remember">
                                             Remember me
                                         </label>
                                     </div>
@@ -128,7 +128,8 @@
                                     <!-- signup area -->
                                     <div class="text-center">
                                         <p>
-                                            <a href="{{route('ForgetPasswordShow')}}" style="color: blue; text-decoration: none">Forget Your Password?</a>
+                                            <a href="{{route('ForgetPasswordShow')}}"
+                                               style="color: blue; text-decoration: none">Forget Your Password?</a>
                                         </p>
                                         <button type="button" class="btn btn-link btn-floating mx-1">
                                         </button>

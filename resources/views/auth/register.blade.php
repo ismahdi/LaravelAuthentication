@@ -138,9 +138,8 @@
 
                                     <!-- login area -->
                                     <div class="text-center">
-                                        <p>already have an account? <a href="{{route('login')}}"
-                                                                       style="color: blue; text-decoration: none">Login
-                                                now</a>
+                                        <p>Already have an account? <a href="{{route('login')}}"
+                                                                       style="color: blue; text-decoration: none">Login </a>
                                         </p>
                                         <button type="button" class="btn btn-link btn-floating mx-1">
                                         </button>
